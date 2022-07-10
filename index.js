@@ -10,7 +10,7 @@ http.createServer((req, res) => {
     
     var route = filename === "./" ? './index.html' : filename;
 
-    fs.readFile(route, function(err, data) {
+    fs.readFile(route, (err, data) => {
       if (err) {
         res.writeHead(404, {'Content-Type': 'text/html'});
         return res.end("404 Not Found");
